@@ -21,11 +21,9 @@ extension SKNode {
     
 }
 
-protocol GameDelegate {
-    func transitionToOtherViewController()
-}
-class GameViewController: UIViewController {
-    var delegate:GameDelegate?
+
+class GameViewController: UIViewController,GameDelegate {
+
     var mainstoryboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     private var openChestVC : OpenChestViewController?
     override func viewDidLoad() {

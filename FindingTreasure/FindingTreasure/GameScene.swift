@@ -1,7 +1,9 @@
 
 import SpriteKit
-
-class GameScene: SKScene, SKPhysicsContactDelegate, GameDelegate {
+protocol GameDelegate {
+    func transitionToOtherViewController()
+}
+class GameScene: SKScene, SKPhysicsContactDelegate {
     var gameDelegate:GameDelegate?
     func transitionToOtherViewController() {
         
@@ -19,7 +21,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate, GameDelegate {
     // MARK: - SKScene
     
     override func didMoveToView(view: SKView) {
-        self.gameDelegate = self
+//        self.gameDelegate = self
         // Setup physics world's contact delegate
         physicsWorld.contactDelegate = self
         
