@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zx9-iG-qyC">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Open Chest View Controller-->
+        <scene sceneID="olR-dn-PGd">
+            <objects>
+                <viewController storyboardIdentifier="OpenChestViewController" id="VF5-Pd-8Sm" customClass="OpenChestViewController" customModule="FindingTreasure" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lOT-MA-qG2"/>
+                        <viewControllerLayoutGuide type="bottom" id="JoP-zg-aB6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="l3E-P9-nvh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chest01.png" translatesAutoresizingMaskIntoConstraints="NO" id="JEX-Tx-FcF">
+                                <rect key="frame" x="180" y="50" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JEX-Tx-FcF" secondAttribute="height" multiplier="1:1" id="mnF-mH-nGl"/>
+                                    <constraint firstAttribute="width" constant="240" id="qVS-k4-wsS"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vt-Ev-4KY">
+                                <rect key="frame" x="281" y="410" width="38" height="30"/>
+                                <state key="normal" title="Open"/>
+                                <connections>
+                                    <action selector="clickOpen:" destination="VF5-Pd-8Sm" eventType="touchUpInside" id="BnN-cb-lXf"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yFZ-k0-l6M">
+                                <rect key="frame" x="150" y="490" width="300" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="7zb-id-uh1"/>
+                                </constraints>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DpO-rz-efU">
+                                <rect key="frame" x="275" y="360" width="51" height="30"/>
+                                <state key="normal" title="Neutral"/>
+                                <connections>
+                                    <action selector="clickNeutral:" destination="VF5-Pd-8Sm" eventType="touchUpInside" id="ixM-Iy-Otc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yFZ-k0-l6M" firstAttribute="centerX" secondItem="l3E-P9-nvh" secondAttribute="centerX" id="1Hw-4t-hj2"/>
+                            <constraint firstItem="DpO-rz-efU" firstAttribute="top" secondItem="JEX-Tx-FcF" secondAttribute="bottom" constant="70" id="MMV-6p-K1a"/>
+                            <constraint firstItem="yFZ-k0-l6M" firstAttribute="centerX" secondItem="l3E-P9-nvh" secondAttribute="centerX" id="O0Y-bM-x5X"/>
+                            <constraint firstItem="4vt-Ev-4KY" firstAttribute="centerX" secondItem="l3E-P9-nvh" secondAttribute="centerX" id="fgP-6t-YfT"/>
+                            <constraint firstItem="yFZ-k0-l6M" firstAttribute="top" secondItem="4vt-Ev-4KY" secondAttribute="bottom" constant="50" id="gVV-xR-OID"/>
+                            <constraint firstItem="JEX-Tx-FcF" firstAttribute="top" secondItem="lOT-MA-qG2" secondAttribute="bottom" constant="30" id="pbw-GJ-npi"/>
+                            <constraint firstItem="4vt-Ev-4KY" firstAttribute="top" secondItem="DpO-rz-efU" secondAttribute="bottom" constant="20" id="rGj-z0-PEx"/>
+                            <constraint firstItem="DpO-rz-efU" firstAttribute="centerX" secondItem="l3E-P9-nvh" secondAttribute="centerX" id="thA-8I-T7d"/>
+                            <constraint firstItem="JEX-Tx-FcF" firstAttribute="centerX" secondItem="l3E-P9-nvh" secondAttribute="centerX" id="uQ3-vy-KsS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="chestImage" destination="JEX-Tx-FcF" id="Rq7-he-FqC"/>
+                        <outlet property="progressView" destination="yFZ-k0-l6M" id="PRE-tN-MYL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mRj-4z-ERT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="390" y="-865"/>
+        </scene>
+        <!--Menu View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MenuViewController" customModule="FindingTreasure" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f64-ov-28t">
+                                <rect key="frame" x="534" y="28" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="clickListDevices:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XCy-CD-CmW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="f64-ov-28t" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="DgZ-i6-8Pi"/>
+                            <constraint firstAttribute="trailing" secondItem="f64-ov-28t" secondAttribute="trailing" constant="20" id="dJg-4e-eU7"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="371" y="436"/>
+        </scene>
+        <!--Select Headset View Controller-->
+        <scene sceneID="7Rd-BB-HKL">
+            <objects>
+                <viewController storyboardIdentifier="SelectHeadsetViewController" id="297-nc-Yy3" customClass="SelectHeadsetViewController" customModule="FindingTreasure" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7sF-BA-bwg"/>
+                        <viewControllerLayoutGuide type="bottom" id="XVt-bR-Oho"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eBk-Fa-vK9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jau-za-mLx">
+                                <rect key="frame" x="180" y="165" width="240" height="270"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfH-bB-bY1">
+                                        <rect key="frame" x="8" y="8" width="224" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="fbi-Hn-AbT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2Sd-Rw-tZ6">
+                                        <rect key="frame" x="8" y="37" width="224" height="225"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="UfH-bB-bY1" secondAttribute="trailing" constant="8" id="0p0-y9-66c"/>
+                                    <constraint firstAttribute="height" constant="270" id="5h9-1x-hZV"/>
+                                    <constraint firstAttribute="bottom" secondItem="2Sd-Rw-tZ6" secondAttribute="bottom" constant="8" id="9yV-up-Y9U"/>
+                                    <constraint firstItem="2Sd-Rw-tZ6" firstAttribute="leading" secondItem="jau-za-mLx" secondAttribute="leading" constant="8" id="AaQ-sj-5ak"/>
+                                    <constraint firstItem="UfH-bB-bY1" firstAttribute="top" secondItem="jau-za-mLx" secondAttribute="top" constant="8" id="AdB-gX-sMx"/>
+                                    <constraint firstItem="UfH-bB-bY1" firstAttribute="leading" secondItem="jau-za-mLx" secondAttribute="leading" constant="8" id="CzE-S7-wfJ"/>
+                                    <constraint firstItem="2Sd-Rw-tZ6" firstAttribute="top" secondItem="UfH-bB-bY1" secondAttribute="bottom" constant="8" id="GcN-wu-bYf"/>
+                                    <constraint firstAttribute="width" constant="240" id="kW4-ok-BLG"/>
+                                    <constraint firstAttribute="trailing" secondItem="2Sd-Rw-tZ6" secondAttribute="trailing" constant="8" id="yYE-tv-qxI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jau-za-mLx" firstAttribute="centerY" secondItem="eBk-Fa-vK9" secondAttribute="centerY" id="eqx-DZ-2Rl"/>
+                            <constraint firstItem="jau-za-mLx" firstAttribute="centerX" secondItem="eBk-Fa-vK9" secondAttribute="centerX" id="orf-RA-GhU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="popOverView" destination="jau-za-mLx" id="O2F-ac-Ja2"/>
+                        <outlet property="tableViewDevices" destination="2Sd-Rw-tZ6" id="MfI-ct-aZm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AtN-t8-zUp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="927" y="389"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="2lg-xz-RZt">
+            <objects>
+                <viewController id="zx9-iG-qyC" customClass="GameViewController" customModule="FindingTreasure" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ObY-yt-6mH"/>
+                        <viewControllerLayoutGuide type="bottom" id="UZL-k9-cdc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="39k-C0-AXw" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1D8-HI-9te" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1010" y="1116"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chest01.png" width="238" height="268"/>
+    </resources>
+</document>
