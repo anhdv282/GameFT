@@ -88,7 +88,7 @@ static EngineWidget *instance;
             
             if(self.delegate){
                 [self.delegate emoStateUpdate:(MentalAction_t)action power:power];
-                [self.delegate updateSignalQuality:valueAF3 AF4:valueAF4 T7:valueT7 T8:valueT8 Pz:valuePz];
+                [self.delegate getSignalChanels:valueAF3 af4Channel:valueAF4 t7Channel:valueT7 t8Channel:valueT8 pzChannel:valuePz];
                 [self.delegate updateBatteryLevel:chargeLevel maxValue:maxChargeLevel];
             }
             

@@ -43,7 +43,7 @@ typedef enum MentalAction_enum
 @optional-(void) onMentalCommandTrainingSignatureUpdated;
 
 /*signal quality*/
-@optional-(void) updateSignalQuality : (int) af3 AF4 : (int) af4 T7 : (int) t7 T8 : (int) t8 Pz : (int) pz;
+-(void ) getSignalChanels: (int) valueSignalAF3 af4Channel : (int) valueSignalAF4 t7Channel : (int) valueSignalT7 t8Channel : (int) valueSignalT8 pzChannel : (int) valueSignalPz;
 @optional-(void) updateSignalQuality : (NSArray *) array;
 
 /*battery level*/
@@ -64,9 +64,11 @@ typedef enum MentalAction_enum
 
 @property(nonatomic, strong) id<EngineWidgetDelegate> delegate;
 @property(nonatomic, strong) id<EngineWidgetDelegate> listDeviceDelegate;
-@property(nonatomic, strong) id<EngineWidgetDelegate> gameDelegate;
+//@property(nonatomic, strong) id<EngineWidgetDelegate> gameDelegate;
+@property(nonatomic, strong) id<EngineWidgetDelegate> openChestDelegate;
 
 @property BOOL isConneted;
+
 +(EngineWidget *) shareInstance;
 
 +(void) setNilInstance;

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0446F5B41D12A3B8003489FF /* GameOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0446F5B31D12A3B8003489FF /* GameOver.swift */; };
 		0446F5B61D12A414003489FF /* OpenChestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0446F5B51D12A414003489FF /* OpenChestViewController.swift */; };
+		047A19421D210C0C002B2308 /* SignalQualityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047A19411D210C0C002B2308 /* SignalQualityView.swift */; };
 		04CD3BA51D114223002AE65A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CD3BA41D114223002AE65A /* AppDelegate.swift */; };
 		04CD3BAA1D114223002AE65A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04CD3BA81D114223002AE65A /* Main.storyboard */; };
 		04CD3BAC1D114223002AE65A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04CD3BAB1D114223002AE65A /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 /* Begin PBXFileReference section */
 		0446F5B31D12A3B8003489FF /* GameOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOver.swift; sourceTree = "<group>"; };
 		0446F5B51D12A414003489FF /* OpenChestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenChestViewController.swift; sourceTree = "<group>"; };
+		047A19411D210C0C002B2308 /* SignalQualityView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalQualityView.swift; sourceTree = "<group>"; };
 		04CD3BA11D114223002AE65A /* FindingTreasure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindingTreasure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04CD3BA41D114223002AE65A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04CD3BA91D114223002AE65A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 		04CD3BC51D114661002AE65A /* Device */ = {
 			isa = PBXGroup;
 			children = (
+				047A19411D210C0C002B2308 /* SignalQualityView.swift */,
 				04CD3BC31D11458B002AE65A /* SelectHeadsetViewController.swift */,
 				04CD3BC81D114C81002AE65A /* HeadsetDevice.swift */,
 			);
@@ -365,6 +368,7 @@
 				04CD3BCB1D115B28002AE65A /* MenuViewController.swift in Sources */,
 				04CD3BB91D114251002AE65A /* EngineWidget.mm in Sources */,
 				04CD3BA51D114223002AE65A /* AppDelegate.swift in Sources */,
+				047A19421D210C0C002B2308 /* SignalQualityView.swift in Sources */,
 				04FEA2631D13F5BA004D70E6 /* MenuScene.swift in Sources */,
 				04CD3BC41D11458B002AE65A /* SelectHeadsetViewController.swift in Sources */,
 				0446F5B41D12A3B8003489FF /* GameOver.swift in Sources */,

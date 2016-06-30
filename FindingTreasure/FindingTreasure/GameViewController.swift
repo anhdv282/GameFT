@@ -22,13 +22,12 @@ extension SKNode {
 }
 
 
-class GameViewController: UIViewController,GameDelegate {
-
+class GameViewController: UIViewController {
+    var gameScene:GameScene?
     var mainstoryboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
     private var openChestVC : OpenChestViewController?
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
             // Configure the view.
             let skView = self.view as! SKView
@@ -61,16 +60,12 @@ class GameViewController: UIViewController,GameDelegate {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
     }
     
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
     
-    func transitionToOtherViewController()
-    {
-        let openChestVC:OpenChestViewController = (mainstoryboard.instantiateViewControllerWithIdentifier("OpenChestViewController") as? OpenChestViewController)!
-        self.presentViewController(openChestVC, animated: true, completion: nil)
-    }
+    
 }
+

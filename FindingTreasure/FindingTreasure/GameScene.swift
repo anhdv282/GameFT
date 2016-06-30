@@ -1,10 +1,8 @@
 
 import SpriteKit
-protocol GameDelegate {
-    func transitionToOtherViewController()
-}
+
+
 class GameScene: SKScene, SKPhysicsContactDelegate {
-    var gameDelegate:GameDelegate?
     func transitionToOtherViewController() {
         
     }
@@ -12,7 +10,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     let playerSpeed: CGFloat = 150.0
     let zombieSpeed: CGFloat = 75.0
-    
+    var isWin : Bool = false;
     var goal: SKSpriteNode?
     var player: SKSpriteNode?
     var zombies: [SKSpriteNode] = []
@@ -21,10 +19,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     // MARK: - SKScene
     
     override func didMoveToView(view: SKView) {
-//        self.gameDelegate = self
         // Setup physics world's contact delegate
         physicsWorld.contactDelegate = self
-        
         // Setup player
         player = self.childNodeWithName("player") as? SKSpriteNode
         self.listener = player
@@ -155,11 +151,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if firstBody.categoryBitMask == player?.physicsBody?.categoryBitMask &&
             secondBody.categoryBitMask == zombies[0].physicsBody?.categoryBitMask {
             // Player & Zombie
-            gameOver(false)
+            homeScene(false)
         } else if firstBody.categoryBitMask == player?.physicsBody?.categoryBitMask &&
             secondBody.categoryBitMask == goal?.physicsBody?.categoryBitMask {
             // Player & Goal
-            gameOver(true)
+            if !isWin {
+                gameOver(true)
+            }
+            
         }
     }
     
@@ -168,13 +167,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private func gameOver(didWin: Bool) {
         print("- - - Game Ended - - -")
-//            let menuScene = MenuScene(size: self.size)
-//            menuScene.soundToPlay = didWin ? "fear_win.mp3" : "fear_lose.mp3"
-//            let transition = SKTransition.flipVerticalWithDuration(1.0)
-//            menuScene.scaleMode = SKSceneScaleMode.AspectFill
-//            self.scene!.view?.presentScene(menuScene, transition: transition)
-//        presentNextVC()
-        self.gameDelegate?.transitionToOtherViewController()
+        presentNextVC()
+        isWin = true
+    }
+    
+    private func homeScene(didWin: Bool) {
+        print("- - - Home Scene - - -")
+        let menuScene = MenuScene(size: self.size)
+        menuScene.soundToPlay = didWin ? "fear_win.mp3" : "fear_lose.mp3"
+        let transition = SKTransition.flipVerticalWithDuration(1.0)
+        menuScene.scaleMode = SKSceneScaleMode.AspectFill
+        self.scene!.view?.presentScene(menuScene, transition: transition)
     }
     
     func presentNextVC() {
@@ -182,5 +185,5 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let currentViewController = (UIApplication.sharedApplication().delegate as! AppDelegate)
         currentViewController.window?.rootViewController?.presentViewController(vc, animated: true, completion: nil)
     }
-    
 }
+
